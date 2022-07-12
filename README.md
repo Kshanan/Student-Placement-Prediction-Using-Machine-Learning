@@ -53,6 +53,7 @@ In this section, a brief review of the machine learning techniques that is used 
 
 **6.0 PROPOSED SYSTEM:**
  
+![image](https://user-images.githubusercontent.com/98414441/178422568-68cf33d3-0d93-4423-9079-6764d8fe1f8f.png)
 
 The first step is collecting the data from the data sources. In our case, the data has been collected using a survey given to the students and the students’ grade book. The second step is pre-processing the data in order to get a normalized dataset and then labelling the data rows. In the third step, the result of the second step, the training and testing dataset, is fed to the Machine Learning algorithm. The Machine Learning Algorithm builds a model using the training data and tests the model using the test data. Finally, the Machine Learning Algorithm produces a trained model that can take as an input a new data row and predict its label.
 Attributes Used :
