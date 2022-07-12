@@ -1,0 +1,33 @@
+{% extends "ad_layout.html" %} 
+{% block content %}
+<center>{% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class="flashes">
+         {% for message in messages %}
+          <div class="message_flash">{{ message }}</div>
+         {% endfor %}
+     </ul>
+   {% endif %}
+  {% endwith %}</center>
+  <link rel="stylesheet" href="/static/main.css">
+  
+  <div class="s131">
+    <form method="post">
+      <h1>Enter Student Details to Get Scores</h1>
+      <div class="inner-form">
+        
+        <div class="input-field first-wrap">
+          <input id="search" type="text" placeholder="Enter Student Name" name="name" >
+        </div>
+        <div class="input-field second-wrap">
+          <div class="input-field first-wrap">
+            <input id="search" type="text" placeholder="Enter Date" name="dte" >
+          </div>
+        </div>
+        <div class="input-field third-wrap">
+          <input type="submit" class="btn-search" value="Get Scores">
+        </div>
+      </div>
+    </form>
+  </div>
+{% endblock content %}

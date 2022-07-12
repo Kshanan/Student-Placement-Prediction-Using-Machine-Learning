@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prediction</title>
+</head>
+<body><center>
+    
+{% if res > 70 %}
+     <img src="/static/congo.gif">
+    <h1 class="alert alert-success" style="background-color: rgb(95, 214, 58); ">Student is Ready For Interview</h1>
+        {% elif  res < 50 %}
+        <h1 class="alert alert-success" style="background-color: rgb(217, 236, 46); ">Student Needs to Work on few Skills</h1>
+        {% elif res < 30 %}
+        <h1 class="alert alert-success" style="background-color: rgb(179, 22, 22); ">Student Needs Overall Development</h1>
+    {% endif %}
+    <h3>Overall Score {{ res }}</h3>
+    <a href="/admin_home">Home</a>
+</center>
+</body>
+</html>

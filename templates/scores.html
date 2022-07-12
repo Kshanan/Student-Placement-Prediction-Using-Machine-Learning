@@ -1,0 +1,99 @@
+{% extends "st_layout.html" %} 
+{% block content %}
+<style>
+    * {
+    font-family: sans-serif; /* Change your font family */
+  }
+  
+  .content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    max-width: 70%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .content-table thead tr {
+    background-color: #cc1f3c;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .content-table th,
+  .content-table td {
+    padding: 12px 15px;
+  }
+  
+  .content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    background-color: #ffffff;
+  }
+  
+  .content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #062079;
+  }
+  
+  .content-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+  }
+
+footer{
+    display:none;
+
+  }
+
+.content-table a{
+    color: #062079;
+}
+</style>
+    <center>{% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul class="flashes">
+             {% for message in messages %}
+              <div class="message_flash">{{ message }}</div>
+             {% endfor %}
+         </ul>
+       {% endif %}
+      {% endwith %}</center>
+    
+      <center>
+        <br><h1> Scores</h1><br>
+       
+        <table class="content-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Name</th>
+                <th>C Quiz(%)</th>
+                <th>Python Quiz(%)</th>
+                <th>Java Quiz(%)</th>
+                <th>Average(%)</th>               
+              </tr>
+            </thead>
+            <tbody>
+            {% for data in total %}
+              <tr>
+                <td>{{ total[0][0] }}</td>
+                <td>{{ total[0][1] }}</td>
+                <td>{{  total[0][2] }}</td>
+                <td>{{  total[0][3] }}</td>
+                <td>{{  total[0][4] }}</td>
+                <td>{{  total[0][5] }}</td>
+                <td>{{  total[0][6] }}</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          
+          </table>
+        </center>
+    
+    {% endblock content %}
